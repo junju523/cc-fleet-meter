@@ -1,0 +1,46 @@
+{
+  "_meta": {
+    "description": "Per-model token pricing for cc-fleet-meter, in USD per 1,000,000 tokens.",
+    "currency": "USD",
+    "unit": "per_million_tokens",
+    "sources": [
+      {
+        "name": "Anthropic Claude pricing (model overview)",
+        "url": "https://platform.claude.com/docs/en/about-claude/models/overview",
+        "retrieved": "2026-06-04",
+        "note": "Base input/output per-MTok rates taken from the Anthropic model overview pricing table. Verified against the bundled claude-api reference (cache date 2026-06-04)."
+      },
+      {
+        "name": "Anthropic prompt caching pricing",
+        "url": "https://platform.claude.com/docs/en/build-with-claude/prompt-caching",
+        "retrieved": "2026-06-04",
+        "note": "Cache economics: a 5-minute cache WRITE costs 1.25x the base input rate; a cache READ costs 0.1x the base input rate. cache_creation tokens are billed at the write rate, cache_read tokens at the read rate. (1-hour TTL writes cost 2x, not modeled here since Claude Code uses the default 5-minute TTL.)"
+      }
+    ],
+    "cache_multipliers": {
+      "cache_write_5m": 1.25,
+      "cache_read": 0.1,
+      "note": "These multipliers are applied to the model's base input rate to derive cache_creation and cache_read rates below. They are pre-computed into each model entry for transparency; override the whole file with --pricing <file> if rates change."
+    },
+    "fallback_note": "Models not listed fall back to the 'default' entry. Aliases without date suffixes match by prefix (e.g. 'claude-opus-4-8' matches 'claude-opus-4-8-20251101')."
+  },
+
+  "models": {
+    "claude-opus-4-8": { "input": 5.0, "output": 25.0, "cache_write_5m": 6.25, "cache_read": 0.5 },
+    "claude-opus-4-7": { "input": 5.0, "output": 25.0, "cache_write_5m": 6.25, "cache_read": 0.5 },
+    "claude-opus-4-6": { "input": 5.0, "output": 25.0, "cache_write_5m": 6.25, "cache_read": 0.5 },
+    "claude-opus-4-5": { "input": 5.0, "output": 25.0, "cache_write_5m": 6.25, "cache_read": 0.5 },
+    "claude-opus-4-1": { "input": 15.0, "output": 75.0, "cache_write_5m": 18.75, "cache_read": 1.5 },
+    "claude-opus-4-0": { "input": 15.0, "output": 75.0, "cache_write_5m": 18.75, "cache_read": 1.5 },
+
+    "claude-sonnet-4-6": { "input": 3.0, "output": 15.0, "cache_write_5m": 3.75, "cache_read": 0.3 },
+    "claude-sonnet-4-5": { "input": 3.0, "output": 15.0, "cache_write_5m": 3.75, "cache_read": 0.3 },
+    "claude-sonnet-4-0": { "input": 3.0, "output": 15.0, "cache_write_5m": 3.75, "cache_read": 0.3 },
+
+    "claude-haiku-4-5": { "input": 1.0, "output": 5.0, "cache_write_5m": 1.25, "cache_read": 0.1 },
+
+    "claude-fable-5": { "input": 10.0, "output": 50.0, "cache_write_5m": 12.5, "cache_read": 1.0 },
+
+    "default": { "input": 5.0, "output": 25.0, "cache_write_5m": 6.25, "cache_read": 0.5 }
+  }
+}

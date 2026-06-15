@@ -1,0 +1,44 @@
+{
+  "name": "cc-fleet-meter",
+  "version": "0.1.0",
+  "description": "Cross-instance cost meter for AI coding agents. Reads local Claude Code logs across your whole fleet of instances and reports spend by instance, model, and project. Local-only, no telemetry.",
+  "keywords": [
+    "claude",
+    "claude-code",
+    "ai",
+    "cost",
+    "usage",
+    "tokens",
+    "cli",
+    "ccusage"
+  ],
+  "license": "MIT",
+  "author": "junju523",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/junju523/cc-fleet-meter.git"
+  },
+  "homepage": "https://github.com/junju523/cc-fleet-meter#readme",
+  "bugs": {
+    "url": "https://github.com/junju523/cc-fleet-meter/issues"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "bin": {
+    "cc-fleet-meter": "bin/cc-fleet-meter.js"
+  },
+  "main": "src/aggregate.js",
+  "files": [
+    "bin/",
+    "src/",
+    "pricing.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "start": "node bin/cc-fleet-meter.js",
+    "test": "node --test"
+  },
+  "dependencies": {}
+}
