@@ -1,8 +1,8 @@
 # cc-fleet-meter
 
-**Cross-instance cost meter for AI coding agents.** One command, run locally, to see what your whole fleet of Claude Code instances is actually costing you — broken down by instance, model, and project.
+**A local cost meter for Claude Code.** One command to see what Claude Code is actually costing you — by model, by project, and (its reason to exist) summed across **every instance** you run.
 
-> Think [ccusage](https://github.com/ryoppippi/ccusage) (single Claude Code instance), but for people running **many instances / many agents in parallel**. If you fan work out across `~/.claude`, `~/.claude-A`, `~/.claude-B` … the per-instance view doesn't tell you the total. This does.
+> Single-instance usage tools already exist and are good — [ccusage](https://github.com/ryoppippi/ccusage) is the one most people use. cc-fleet-meter's difference: if you run **more than one** Claude Code home (`~/.claude`, `~/.claude-A`, `~/.claude-B` …), no per-instance tool gives you the *combined* total. This does — one number for the whole fleet, plus per-instance / per-model / per-project breakdowns. Works fine for a single instance too.
 
 ---
 
