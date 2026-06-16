@@ -15,10 +15,12 @@ cc-fleet-meter reads the logs every instance already writes to disk and rolls th
 ## One command
 
 ```bash
-npx cc-fleet-meter
+npx github:junju523/cc-fleet-meter
 ```
 
-No install, no config, no API key. (Requires Node 20+.)
+No install, no config, no API key. (Requires Node 20+ and `git`.)
+
+> An npm release (`npx cc-fleet-meter`) is on the way; until then, install straight from GitHub with the command above.
 
 ## Example output
 
@@ -61,7 +63,7 @@ automation       176    32.94M    $42.70
 JSON for piping into your own tooling:
 
 ```bash
-npx cc-fleet-meter --json
+npx github:junju523/cc-fleet-meter --json
 ```
 
 ## Local-only by design — your trust is the product
@@ -92,7 +94,7 @@ Prices live in [`pricing.json`](./pricing.json) with their **source URL and retr
 **Treat dollar figures as a close estimate, not a billing statement.** Published rates change, and your account may have different terms. Override the whole table with your own rates at any time:
 
 ```bash
-npx cc-fleet-meter --pricing ./my-rates.json
+npx github:junju523/cc-fleet-meter --pricing ./my-rates.json
 ```
 
 Models with no entry are priced with a clearly-flagged `default` rate, and the tool tells you which ones so you can add them.

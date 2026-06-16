@@ -13,7 +13,7 @@ breakdowns by instance, model, and project. Runs fully locally:
 no network calls, no telemetry, no API key.
 
 USAGE
-  npx cc-fleet-meter [options]
+  npx github:junju523/cc-fleet-meter [options]
   node bin/cc-fleet-meter.js [options]
 
 OPTIONS
